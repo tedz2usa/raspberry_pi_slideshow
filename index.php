@@ -668,7 +668,7 @@ function initDiagnostics() {
 	
 	field = 'animation-timings';
 	if (diagnostics.dataFields.indexOf(field) > -1) {
-		diagnostics.dataDom[field].innerHTML = 'Hold slide:&nbsp;&nbsp;&nbsp;&nbsp;' + holdSlide + ' sec <br> Fade duration: ' + fadeDuration + ' sec';
+		diagnostics.dataDom[field].innerHTML = 'Hold slide:&nbsp;&nbsp;&nbsp;&nbsp;' + holdSlide + ' sec '; // + '<br> Fade duration: ' + fadeDuration + ' sec';
 	}
 	
 	field = 'frame-rate';
@@ -688,14 +688,6 @@ function updateFrameRate() {
 // Given an element, sets its background image to the given url.
 function setBackgroundUrl(element, url) {
 	element.style.backgroundImage = "url('" + url + "')";
-// 	log('Setting background of ' + element.id + ' with ' + url);
-// 	var image = new Image();
-// 	image.src = url;
-// 	image.onload = (function() {
-// 		element.style.backgroundImage = "url('" + url + "')";
-// 		loading.style.display = 'none';
-// 		log('Loaded!!');
-// 	});
 }
 
 // Gives the index of the next image, looping back to zero when needed.
