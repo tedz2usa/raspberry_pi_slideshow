@@ -1,1 +1,2 @@
-# raspberry_pi_slideshow
+# Raspberry Pi Slideshow
+
