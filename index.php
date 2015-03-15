@@ -52,13 +52,6 @@ $show_unformatted_images_if_date_control_enabled = false;
 $directory = 'JumbotronSlides/';
 
 /**
- ** Accepted Image File Extensions:
- ** 
- **    e.g., ['jpeg', 'jpg', 'png', 'gif']
- **/
-$directory = 'JumbotronSlides/';
-
-/**
  ** Image fitting setting: 
  **
  **   'cover'      =>  Scales the image so that no space is seen on any edges,
