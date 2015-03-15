@@ -310,6 +310,15 @@ div#diagnostics .anim_note {
 	text-align: left;
 }
 
+div#loadingMessage {
+	font-size: 30px;
+	font-weight: bold;
+	color: #aaa;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+}
+
 </style>
 <script>
 
@@ -355,6 +364,7 @@ window.onload = function() {
 	diagnostics.dom = document.getElementById('diagnostics');
 	currentImage = document.getElementById('currentImage');
 	nextImage = document.getElementById('nextImage');
+	loading = document.getElementById('loadingMessage');
 	
 	index  = 0;
 	loadSettings(settings);
@@ -671,7 +681,13 @@ function updateFrameRate() {
 // Given an element, sets its background image to the given url.
 function setBackgroundUrl(element, url) {
 	log('Setting background of ' + element.id + ' with ' + url);
-	element.style.backgroundImage = "url('" + url + "')";
+	var image = new Image();
+	image.src = url;
+	image.onload = (function() {
+		element.style.backgroundImage = "url('" + url + "')";
+		loading.style.display = 'none';
+		log('Loaded!!');
+	});
 }
 
 // Gives the index of the next image, looping back to zero when needed.
@@ -690,5 +706,6 @@ function incrementIndex() {
 		<div id='nextImage' class='slide absolute'></div>
 		<div id='currentImage' class='slide absolute'></div>
 		<div id='diagnostics' class='absolute'></div>
+		<div id='loadingMessage' class='absolute'>Image Loading...</div>
 	</body>
 <html>
