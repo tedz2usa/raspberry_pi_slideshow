@@ -345,7 +345,7 @@ var picturePaths,
 	currentDate,
 	reloadImageDeck;
 
-var canAnimate = !!(window.requestAnimationFrame);
+var canAnimate = !!(window.requestAnimationFrame) && false;
 
 var httpRequest;
 
