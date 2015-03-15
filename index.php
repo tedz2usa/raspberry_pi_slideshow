@@ -668,6 +668,7 @@ function updateFrameRate() {
 
 // Given an element, sets its background image to the given url.
 function setBackgroundUrl(element, url) {
+	log('Setting background of ' + element.id + ' with ' + url);
 	element.style.backgroundImage = "url('" + url + "')";
 }
 
