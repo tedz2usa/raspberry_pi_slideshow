@@ -372,12 +372,10 @@ window.onload = function() {
 	setBackgroundUrl(currentImage, picturePaths[index]);
 	setBackgroundUrl(nextImage, picturePaths[nextIndex()]);
 	
-	/*
 	setTimeout(changeSlide, slidePeriod);
 	
 	httpRequest = new XMLHttpRequest();
 	httpRequest.onreadystatechange = ajaxCallback;
-	*/
 
 };
 
