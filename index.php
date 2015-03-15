@@ -370,16 +370,15 @@ window.onload = function() {
 	loadSettings(settings);
 	
 	// Initially load the first image.
-	log('Initial Load.');
 	var image = new Image();
 	image.src = picturePaths[index];
 	image.onload = (function() {
 		loading.style.display = 'none';
-		log('Loaded!!');
+		// After first image is loaded, 
+		// we begin timing for the next slide change.
 		setTimeout(changeSlide, slidePeriod);
 	});
 
-	
 	setBackgroundUrl(currentImage, picturePaths[index]);
 	setBackgroundUrl(nextImage, picturePaths[nextIndex()]);
 	
@@ -423,8 +422,6 @@ function changeSlide() {
 
 // This function is called to update the background image for currentImage and nextImage.
 function advanceBackgrounds() {
-
-	log('Advancingg backgrounds...');
 
 	incrementIndex();
 	
