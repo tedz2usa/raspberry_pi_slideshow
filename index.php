@@ -40,7 +40,7 @@ $diagnostic_mode = true;
  **     $enable_date_control = true;
  **     $show_unformatted_images_if_date_control_enabled = false;
  **/
-$enable_date_control = false;
+$enable_date_control = true;
 $show_unformatted_images_if_date_control_enabled = false;
 
 
