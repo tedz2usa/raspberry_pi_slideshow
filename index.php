@@ -405,6 +405,8 @@ function changeSlide() {
 // This function is called to update the background image for currentImage and nextImage.
 function advanceBackgrounds() {
 
+	log('Advancingg backgrounds...');
+
 	incrementIndex();
 	
 	// Let the currentImage div have its background be the new current image, 
