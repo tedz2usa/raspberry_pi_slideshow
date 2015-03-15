@@ -545,7 +545,7 @@ function initDiagnostics() {
 	
 	diagnostics.dom.innerHTML = '';
 	
-	if (!canAnimate) {
+	if (!canAnimate && fadeDuration!=0) {
 		var notice = document.createElement('div');
 		notice.innerText = 'Please update your browser so that fade animations can work.';
 		notice.className = 'anim_note';
