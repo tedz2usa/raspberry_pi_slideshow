@@ -369,10 +369,19 @@ window.onload = function() {
 	index  = 0;
 	loadSettings(settings);
 	
+	// Initially load the first image.
+	log('Initial Load.');
+	var image = new Image();
+	image.src = picturePaths[index];
+	image.onload = (function() {
+		loading.style.display = 'none';
+		log('Loaded!!');
+		setTimeout(changeSlide, slidePeriod);
+	});
+
+	
 	setBackgroundUrl(currentImage, picturePaths[index]);
 	setBackgroundUrl(nextImage, picturePaths[nextIndex()]);
-	
-	setTimeout(changeSlide, slidePeriod);
 	
 	httpRequest = new XMLHttpRequest();
 	httpRequest.onreadystatechange = ajaxCallback;
@@ -678,14 +687,15 @@ function updateFrameRate() {
 
 // Given an element, sets its background image to the given url.
 function setBackgroundUrl(element, url) {
-	log('Setting background of ' + element.id + ' with ' + url);
-	var image = new Image();
-	image.src = url;
-	image.onload = (function() {
-		element.style.backgroundImage = "url('" + url + "')";
-		loading.style.display = 'none';
-		log('Loaded!!');
-	});
+	element.style.backgroundImage = "url('" + url + "')";
+// 	log('Setting background of ' + element.id + ' with ' + url);
+// 	var image = new Image();
+// 	image.src = url;
+// 	image.onload = (function() {
+// 		element.style.backgroundImage = "url('" + url + "')";
+// 		loading.style.display = 'none';
+// 		log('Loaded!!');
+// 	});
 }
 
 // Gives the index of the next image, looping back to zero when needed.
